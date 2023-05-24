@@ -1,0 +1,20 @@
+live_config_reload: true
+window:
+  opacity: 0.9
+  decorations: none
+  padding:
+    x: 5
+    y: 5
+font:
+  size: 12
+selection:
+  save_to_clipboard: true
+cursor:
+  style:
+    shape: Underline
+  vi_mode_style:
+    shape: Block
+mouse_bindings:
+  - { action: Copy, mouse: Middle }
+key_bindings:
+  - { key: Space,  mods: Control, action: ToggleViMode }

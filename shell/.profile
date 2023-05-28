@@ -30,3 +30,6 @@ fi
 export PATH="$PATH:/home/saurabh/.local/share/JetBrains/Toolbox/scripts"
 
 export PATH="$PATH:$HOME/.cargo/bin"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

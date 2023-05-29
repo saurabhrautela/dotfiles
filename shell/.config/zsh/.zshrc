@@ -19,9 +19,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-# Use vim keybindings
-bindkey -v
-
 # Use modern completion system
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -32,6 +29,14 @@ _comp_options+=(globdots)       # Include hidden files.
 bindkey '^ ' autosuggest-accept
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+# Load aliases
+ZSH_ALIASES=${ZDOTDIR}/zsh-aliases
+[ -f ${ZSH_ALIASES} ] && source ${ZSH_ALIASES}
+
+LOCAL_ALIASES=${HOME}/.aliases-local
+[ -f ${LOCAL_ALIASES} ] && source ${LOCAL_ALIASES}
+
+# Load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

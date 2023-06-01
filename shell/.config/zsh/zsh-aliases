@@ -32,3 +32,9 @@ alias pip='pip3'
 alias pm='python manage.py'
 alias pmm='python manage.py makemigrations'
 alias pmg='python manage.py migrate'
+
+# Convert all files in a folder from rst to md using pandoc
+# Non-recursively
+alias rsttomd='for rst in *.rst; do pandoc "$rst" -f rst -t markdown -o "${rst%.*}.md"; done'
+# Recursively
+alias rsttomdr='for rst in **/*.rst; do pandoc "$rst" -f rst -t markdown -o "${rst%.*}.md"; done'

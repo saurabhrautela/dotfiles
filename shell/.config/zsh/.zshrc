@@ -1,13 +1,13 @@
+# Load functions
+ZSH_FUNCTIONS=${ZDOTDIR}/zsh-functions
+[ -f ${ZSH_FUNCTIONS} ] && source ${ZSH_FUNCTIONS}
+
 # Set up the prompt
 autoload -Uz promptinit
 promptinit
 autoload -U colors && colors
 
-# Set up the prompt
-function parse_git_branch() {
-    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
-}
-
+# Setup prompt
 COLOR_DEF=$'%f'
 COLOR_DIR=$'%F{197}'
 COLOR_GIT=$'%F{39}'

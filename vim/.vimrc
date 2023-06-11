@@ -20,11 +20,18 @@ set scrolloff=5
 set lbr
 set hidden
 set incsearch
+set ignorecase
 set smartcase
 set number relativenumber
+set mouse=a
 
-set ai
+set clipboard=unnamedplus
+
 set si
 set bg=dark
 syntax enable
 let python_hightlight_all = 1
+
+set guicursor=n-v-c:hor10
+set guicursor+=i-ci:ver10-Search
+set guicursor+=a:blinkon0

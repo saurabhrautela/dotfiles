@@ -25,4 +25,3 @@ map Q gq
 
 set list
 nnoremap <esc> :noh<return><esc>
-set clipboard+=unnamed

@@ -26,7 +26,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)       # Include hidden files.
 
-bindkey '^ ' autosuggest-accept
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # Load aliases
@@ -40,3 +39,18 @@ LOCAL_ALIASES=${HOME}/.aliases-local
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Key bindings
+bindkey '^ ' autosuggest-accept
+bindkey "^[[1;5C" forward-word  # Ctrl+right
+bindkey "^[[1;5D" backward-word  # Ctrl+left
+
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
+bindkey "^?" backward-delete-char
+bindkey "^w" backward-kill-word
+zle -N zle-keymap-select

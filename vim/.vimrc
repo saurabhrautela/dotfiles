@@ -34,4 +34,4 @@ let python_hightlight_all = 1
 
 set guicursor=n-v-c:hor10
 set guicursor+=i-ci:ver10-Search
-set guicursor+=a:blinkon0
+set guicursor+=n-v-c:blinkon0
